@@ -115,8 +115,9 @@
                     xTilt = -(xTilt + 80);
                 }
                 
-                mouseX = windowHalfX * xTilt / 90;
-                mouseY = windowHalfY * yTilt / 180;
+                var movementScale = 360 / 90;
+                mouseX = windowHalfX * xTilt / 90 * movementScale;
+                mouseY = windowHalfY * yTilt / 180 * movementScale;
             }
 
 			function animate() {
