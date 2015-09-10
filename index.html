@@ -65,7 +65,7 @@
 
 				scene = new THREE.Scene();
 
-				light = new THREE.DirectionalLight( 0xffff00 );
+				light = new THREE.DirectionalLight( 0xffffff );
 				light.position.set( 0, 0, 1 );
 				scene.add( light );
 
@@ -80,7 +80,7 @@
                 scene.add( pointCloud );
                 
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
-				renderer.setClearColor( 0x060606 );
+				renderer.setClearColor( /*0x060606*/ 0x60d0d0 );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				container.appendChild( renderer.domElement );
