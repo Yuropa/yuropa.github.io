@@ -86,7 +86,7 @@
 				container.appendChild( renderer.domElement );
 
 				document.addEventListener( 'mousemove', onDocumentMouseMove );
-                document.addEventListener( 'deviceorientation', onDocumentDeviceMove );
+                window.addEventListener( 'deviceorientation', onDocumentDeviceMove );
 				window.addEventListener( 'resize', onWindowResize );
 			}
 
