@@ -115,8 +115,8 @@
                     xTilt = -(xTilt + 80);
                 }
                 
-                mouseX = windowHalfX * xTilt;
-                mouseY = windowHalfY * yTilt;
+                mouseX = windowHalfX * xTilt / 90;
+                mouseY = windowHalfY * yTilt / 180;
             }
 
 			function animate() {
