@@ -106,18 +106,9 @@
 			}
             
             function onDocumentDeviceMove( event ) {
-                var yTilt = Math.round((-event.beta + 90) * (40/180) - 40);
-                var xTilt = Math.round(-event.gamma * (20/180) - 20);
-
-                if (xTilt > 0) {
-                    xTilt = -xTilt;
-                } else if (xTilt < -40) {
-                    xTilt = -(xTilt + 80);
-                }
-                
                 var movementScale = 360 / 180;
-                mouseX = windowHalfX * xTilt / 90 * movementScale;
-                mouseY = windowHalfY * yTilt / 180 * movementScale;
+                mouseX = windowHalfX * -event.gamma / 90 * movementScale;
+                mouseY = windowHalfY * -event.beta / 180 * movementScale;
             }
 
 			function animate() {
