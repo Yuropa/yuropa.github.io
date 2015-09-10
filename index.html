@@ -65,7 +65,7 @@
 
 				scene = new THREE.Scene();
 
-				light = new THREE.DirectionalLight( 0xffffff );
+				light = new THREE.DirectionalLight( 0xffff00 );
 				light.position.set( 0, 0, 1 );
 				scene.add( light );
 
@@ -85,8 +85,9 @@
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				container.appendChild( renderer.domElement );
 
-				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-				window.addEventListener( 'resize', onWindowResize, false );
+				document.addEventListener( 'mousemove', onDocumentMouseMove );
+                document.addEventListener( 'onDocumentDeviceMove', onDocumentDeviceMove );
+				window.addEventListener( 'resize', onWindowResize );
 			}
 
 			function onWindowResize() {
@@ -103,6 +104,20 @@
 				mouseX = ( event.clientX - windowHalfX );
 				mouseY = ( event.clientY - windowHalfY );
 			}
+            
+            function onDocumentDeviceMove( event ) {
+                var yTilt = Math.round((-eventData.beta + 90) * (40/180) - 40);
+                var xTilt = Math.round(-eventData.gamma * (20/180) - 20);
+
+                if (xTilt > 0) {
+                    xTilt = -xTilt;
+                } else if (xTilt < -40) {
+                    xTilt = -(xTilt + 80);
+                }
+                
+                mouseX = windowHalfX * xTilt;
+                mouseY = windowHalfY * yTilt;
+            }
 
 			function animate() {
 				requestAnimationFrame( animate );
