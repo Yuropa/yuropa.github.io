@@ -107,8 +107,8 @@
             
             function onDocumentDeviceMove( event ) {
                 var movementScale = 360 / 180;
-                mouseX = windowHalfX * -event.gamma / 90 * movementScale;
-                mouseY = windowHalfY * -event.beta / 180 * movementScale;
+                mouseX = windowHalfX * event.gamma / 90 * movementScale;
+                mouseY = windowHalfY * event.beta / 180 * movementScale;
             }
 
 			function animate() {
