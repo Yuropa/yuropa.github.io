@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>The Spirit of the Architect</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			html, body {
+				overflow: hidden;
+                width   : 100%;
+                height  : 100%;
+                margin  : 0;
+                padding : 0;
+			}
+
+			#renderCanvas {
+				width   : 100%;
+                height  : 100%;
+                touch-action: none;
+                position: absolute;
+			}
+            
+            #UICanvas {
+                width: 400px;
+                height: 200px;
+                touch-action: none;
+                pointer-events: none;
+                position: absolute;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            
+            #TextCanvas {
+                width: 400px;
+                height: 200px;
+                touch-action: none;
+                pointer-events: none;
+                position: absolute;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                left: 50%;
+                top: 50%;
+                margin-left: -200px;
+                margin-top: -100px;
+            }
+            
+
+		</style>
+	</head>
+	<body>
+        <script src="external/jquery.min.js"></script>
+        <script src="external/babylon.js"></script>
+        <script src="external/babylon.objFileLoader.js"></script>
+        <script src="scene.js"></script>
+        <script src="waterMaterial.js"></script>
+        
+        <img id="textBackground" src="resources/Text%20Background.png" srcset="resources/Text%20Background@2x.png" style="visibility: hidden; display: none;"/>
+        <canvas id="renderCanvas"></canvas>
+        <canvas id="UICanvas"></canvas>
+        <canvas id="TextCanvas"></canvas>
+        
+        <script>
+            window.addEventListener('DOMContentLoaded', function(){
+                if (!BABYLON.Engine.isSupported()) {
+                    alert("You're browser doesn't support WebGL. We are unable to run the game at this time");
+                    return;
+                } 
+                
+                UICanvas = document.getElementById('UICanvas');
+                // Make Retina
+                var scale = window.devicePixelRatio;
+                UICanvas.width = 400 * scale;
+                UICanvas.height = 200 * scale;
+                var ctx = UICanvas.getContext('2d');
+                ctx.scale(scale, scale);
+                
+                TextCanvas = document.getElementById('TextCanvas');
+                TextCanvas.width = 400 * scale;
+                TextCanvas.height = 200 * scale;
+                var textCtx = TextCanvas.getContext('2d');
+                textCtx.scale(scale, scale);
+                
+                currentTime = new Date();
+                canvas = document.getElementById('renderCanvas');
+                engine = new BABYLON.Engine(canvas, true);
+                
+                scene  = new BABYLON.Scene(engine);
+                var loader = new BABYLON.AssetsManager(scene);
+                loadScene(loader);
+                
+                loader.onFinish = function() {
+                    engine.runRenderLoop(function() {
+                        var newTime = new Date();
+                        var dt = (newTime - currentTime) / 1000.0;
+                        currentTime = newTime;
+
+                        updateScene(dt);
+                        renderScene();
+                    });
+                };
+                
+                loader.load();
+                
+                window.addEventListener('resize', function(){
+                    // engine.resize();
+                });
+            }); 
+        </script>
+	</body>
+</html>
