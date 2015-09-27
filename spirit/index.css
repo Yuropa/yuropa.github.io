@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'GothicTitle';
+    src: url('resources/PERRYGOT.TTF');
+}
+
+@font-face {
+    font-family: 'GothicBody';
+    src: url('resources/Kingthings Petrock.ttf');
+}
+
+html, body {
+    overflow: hidden;
+    width   : 100%;
+    height  : 100%;
+    margin  : 0;
+    padding : 0;
+}
+
+#renderCanvas {
+    width   : 100%;
+    height  : 100%;
+    touch-action: none;
+    position: absolute;
+}
+
+#UICanvas {
+    width: 400px;
+    height: 200px;
+    touch-action: none;
+    pointer-events: none;
+    position: absolute;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+#TextCanvas {
+    width: 400px;
+    height: 200px;
+    touch-action: none;
+    pointer-events: none;
+    position: absolute;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -100px;
+}
+
+#splashScreen {
+    padding-top: 15%;
+    padding-bottom: 15%;
+    width: 100%;
+    height: 100%;
+    background: url('resources/SplashScreen.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#title {
+    width: 80%;
+    margin: 0 auto;
+    font-family: "GothicTitle", sans-serif;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.startButton {
+    opacity: 0;
+    background: #E0E0E0;
+    border: solid #D6D6D6 thin;
+    border-radius: 3px;
+    color: white;
+    font-family: "GothicBody", sans-serif;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    width: 100px;
+    margin-top: 60px;
+	margin-bottom: 0px;
+    
+    -moz-animation: fadein 1s ease-in 2s forwards; /* Firefox */
+    -webkit-animation: fadein 1s ease-in 2s forwards; /* Safari and Chrome */ /* Opera */
+    animation: fadein 1s ease-in 2s forwards;
+}
+
+.startButton:hover {
+    background: #D0D0D0;
+    border: solid #C6C6C6 thin;
+    cursor: pointer;
+}

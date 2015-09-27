@@ -7,6 +7,15 @@ var UICanvas;
 var TextCanvas;
 var mask, happyMask, temple, grassTexture;
 
+function startGame() {
+    document.getElementById('splashScreen').style.display = "none";
+    document.getElementById('renderCanvas').style.display = "initial";
+    document.getElementById('UICanvas').style.display = "initial";
+    document.getElementById('TextCanvas').style.display = "initial";
+    
+    engine.resize();
+};
+
 BABYLON.VertexData.CreateGroundFromHeightArray = function (width, height, subdivisions, minHeight, maxHeight, buffer, bufferWidth, bufferHeight) {
     var indices = [];
     var positions = [];
@@ -114,9 +123,9 @@ function generateHeightMap() {
 
 function loadScene(loader) {
     generateHeightMap();
-
-    scene.ambientColor = new BABYLON.Color3(1, 1, 1);
     
+    scene.ambientColor = new BABYLON.Color3(1, 1, 1);
+
     var camera = new BABYLON.FreeCamera("Camera", new BABYLON.Vector3(0, 0, 380), scene);
     camera.attachControl(canvas, true);
 
@@ -224,7 +233,7 @@ function loadScene(loader) {
     scene.registerBeforeRender(beforeRenderFunction);
 
     var sun = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(60, 100, 10), scene);
-    
+
     var skybox = BABYLON.Mesh.CreateBox("skyBox", 3000.0, scene);
     var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
     skyboxMaterial.backFaceCulling = false;
@@ -236,7 +245,7 @@ function loadScene(loader) {
 
     var extraGround = BABYLON.Mesh.CreateGround("extraGround", 3000, 3000, 1, scene, false);
     var extraGroundMaterial = new BABYLON.StandardMaterial("extraGround", scene);
-    
+
     extraGround.position.y = -2.0;
     extraGround.material = extraGroundMaterial;
 
@@ -245,28 +254,28 @@ function loadScene(loader) {
     vertexData.applyToMesh(ground, false);
 
     var groundMaterial = new BABYLON.StandardMaterial("rock", scene);
-    
+
     var rockTask = loader.addTextureTask("rock", "resources/rock.jpg");
-    rockTask.onSuccess = function(t) {
+    rockTask.onSuccess = function (t) {
         groundMaterial.diffuseTexture = t.texture;
         groundMaterial.diffuseTexture.uScale = 6;
         groundMaterial.diffuseTexture.vScale = 6;
-        
+
         extraGroundMaterial.diffuseTexture = t.texture;
         extraGroundMaterial.diffuseTexture.uScale = 60;
         extraGroundMaterial.diffuseTexture.vScale = 60;
     }
-    
+
     groundMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
-    
+
     var rockBumpTask = loader.addTextureTask("rockBump", "resources/rockBump.png");
-    rockBumpTask.onSuccess = function(t) {
+    rockBumpTask.onSuccess = function (t) {
         groundMaterial.bumpTexture = t.texture;
         groundMaterial.bumpTexture.uScale = 6;
         groundMaterial.bumpTexture.vScale = 6;
     }
-    
-    
+
+
     ground.position.y = -2.0;
     ground.material = groundMaterial;
 
@@ -282,10 +291,10 @@ function loadScene(loader) {
     water.material = waterMaterial;
 
     var grassTask = loader.addTextureTask("grass", "resources/grass.jpg");
-    grassTask.onSuccess = function(t) {
+    grassTask.onSuccess = function (t) {
         grassTexture = t.texture;
     };
-    
+
     var maskTask = loader.addMeshTask("mask", "", "resources/", "mask.obj");
     maskTask.onSuccess = function (t) {
         mask = t.loadedMeshes[0];
@@ -300,10 +309,10 @@ function loadScene(loader) {
         mask.material = maskMat;
     };
     var happyTask = loader.addMeshTask("happyMask", "", "resources/", "happyMask.obj");
-    happyTask.onSuccess = function(t) {
+    happyTask.onSuccess = function (t) {
         happyMask = t.loadedMeshes[0];
         happyMask.setEnabled(false);
-        
+
         happyMask.position.y = heightMap[heightMapSize / 2.0 * heightMapSize + heightMapSize / 2.0] / 255.0 * 20.0 - 2.0 + 20.0;
         happyMask.scaling = new BABYLON.Vector3(3.0, 3.0, 3.0);
 
@@ -315,17 +324,17 @@ function loadScene(loader) {
         happyMask.material = maskMat;
     }
     var templateTask = loader.addMeshTask("temple", "", "resources/", "temple.obj");
-    templateTask.onSuccess = function(t) {
+    templateTask.onSuccess = function (t) {
         temple = t.loadedMeshes[0];
         temple.setEnabled(false);
         temple.position.y = heightMap[heightMapSize / 2.0 * heightMapSize + heightMapSize / 2.0] / 255.0 * 20.0 - 2.0;
         temple.scaling = new BABYLON.Vector3(10.0, 10.0, 10.0);
-        
+
         var maskMat = new BABYLON.StandardMaterial("mask-material", scene);
         maskMat.diffuseColor = new BABYLON.Color3(0.8, 0.8, 0.8);
         maskMat.ambientColor = new BABYLON.Color3(0.1, 0.1, 0.1);
         temple.material = maskMat;
-        
+
         BABYLON.SceneOptimizer.OptimizeAsync(scene);
     }
 
@@ -341,59 +350,63 @@ function loadScene(loader) {
         if (!pickResult.hit) {
             return;
         }
+        
+        if (pickResult.pickedMesh == happyMask && pickResult.distance < 100.0) {
+            showingText = true;
 
+                var ctx = TextCanvas.getContext('2d');
+                var img = document.getElementById("textBackground");
+                ctx.drawImage(img, 0, 0, 400, 200);
+
+                ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+                ctx.font = "20px GothicBody";
+                ctx.fillText('"I could ask you to do other tasks.', 20, 40);
+                ctx.fillText('Maybe later..."', 20, 80);
+        }
+        
         if (pickResult.pickedMesh == mask && pickResult.distance < 100.0) {
-            if (templateShowing) {
+            if (templeShowing) {
+                return;
+            }
+            if (!orbsLoaded) {
+                createOrbs();
+            }
+
+            if (orbsRemaining != 0) {
+
                 showingText = true;
-                
+
                 var ctx = TextCanvas.getContext('2d');
-                var img=document.getElementById("textBackground");
+                var img = document.getElementById("textBackground");
                 ctx.drawImage(img, 0, 0, 400, 200);
 
                 ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
-                ctx.font = "20px Arial";
-                ctx.fillText("I could ask you to do other tasks.", 20, 40);
-                ctx.fillText("Maybe later...", 20, 80);
-            } else {
-                if (!orbsLoaded) {
-                    createOrbs();
-                }
-                
-                if (orbsRemaining != 0) {
-                
-                showingText = true;
-                
-                var ctx = TextCanvas.getContext('2d');
-                var img=document.getElementById("textBackground");
-                ctx.drawImage(img, 0, 0, 400, 200);
-
-                ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
-                ctx.font = "20px Arial";
+                ctx.font = "20px GothicBody";
                 ctx.fillText('"Three Orbs of untold power are', 20, 40);
                 ctx.fillText("scattered across this island.", 20, 80);
                 ctx.fillText("Bring them to me, so that I can", 20, 120);
                 ctx.fillText('ascend to my true form."', 20, 160);
-            } else  {
+            } else {
                 templeShowing = true;
                 var flashSphere = new BABYLON.Mesh.CreateSphere("flash", 20, 0.1, scene);
                 flashSphere.position = mask.position;
                 flashSphere.material = new BABYLON.StandardMaterial("sm1", scene);
                 flashSphere.material.ambientColor = new BABYLON.Color3(1.0, 1.0, 1.0);
-                
+
                 var flashAnimation = new BABYLON.Animation("flash", "scaling", 30, BABYLON.Animation.ANIMATIONTYPE_VECTOR3, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT);
                 var keys = [];
                 keys.push({
                     frame: 0,
                     value: new BABYLON.Vector3(1.0, 1.0, 1.0)
                 });
-                
+
                 var flashScale = BABYLON.Vector3.Distance(camera.position, mask.position) / 0.1;
-                
+
                 keys.push({
                     frame: 30,
                     value: new BABYLON.Vector3(flashScale, flashScale, flashScale)
                 });
-                
+
                 keys.push({
                     frame: 60,
                     value: new BABYLON.Vector3(flashScale * 2.0, flashScale * 2.0, flashScale * 2.0)
@@ -401,8 +414,9 @@ function loadScene(loader) {
                 flashAnimation.setKeys(keys);
                 flashSphere.animations.push(flashAnimation);
                 scene.beginAnimation(flashSphere, 0, 60, false);
-                
-                setTimeout(function() {
+
+                setTimeout(function () {
+                    UICanvas.getContext('2d').clearRect(0, 0, 400, 200);
                     templeShowing = true;
                     mask.setEnabled(false);
                     happyMask.setEnabled(true);
@@ -414,9 +428,8 @@ function loadScene(loader) {
                     flashSphere.dispose();
                 }, 1500);
             }
-            }
         }
-        
+
         for (var i = 0; i < orbs.length; i++) {
             if (orbs[i].object == pickResult.pickedMesh && pickResult.distance < 60.0) {
                 orbs[i].callback();
@@ -488,15 +501,15 @@ function createOrbs() {
         sphere.material = sm1;
 
         orbs.push({
-              object: sphere,
-              callback: (function(i) {
-                  return (function () {
-                      drawUIOrb(i, true);
-                      sphere.dispose();
-                      orbsRemaining--;
-                  });
-              })(index)
-          });
+            object: sphere,
+            callback: (function (i) {
+                return (function () {
+                    drawUIOrb(i, true);
+                    sphere.dispose();
+                    orbsRemaining--;
+                });
+            })(index)
+        });
 
         var outerRadius = radius / 2.0;
         for (var j = 0; j < 3; j++) {
