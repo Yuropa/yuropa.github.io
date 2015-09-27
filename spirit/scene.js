@@ -125,8 +125,13 @@ function loadScene(loader) {
     generateHeightMap();
     
     scene.ambientColor = new BABYLON.Color3(1, 1, 1);
-
-    var camera = new BABYLON.FreeCamera("Camera", new BABYLON.Vector3(0, 0, 380), scene);
+    
+    var camera;
+    if (Modernizr.touch) {
+        camera = new BABYLON.TouchCamera("Camera", new BABYLON.Vector3(0, 0, 380), scene);
+    } else {
+        camera = new BABYLON.FreeCamera("Camera", new BABYLON.Vector3(0, 0, 380), scene);
+    }
     camera.attachControl(canvas, true);
 
     var beforeRenderFunction = function () {
