@@ -132,7 +132,11 @@ function loadScene(loader) {
     } else {
         camera = new BABYLON.FreeCamera("Camera", new BABYLON.Vector3(0, 0, 380), scene);
     }
-    camera.attachControl(canvas, true);
+    camera.attachControl(canvas);
+    camera.keysLeft  = [37, 65];
+    camera.keysRight = [39, 68];
+    camera.keysUp    = [38, 87];
+    camera.keysDown  = [40, 83];
 
     var beforeRenderFunction = function () {
         var cameraOffset = 20.0;
