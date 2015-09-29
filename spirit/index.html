@@ -20,7 +20,7 @@
             <div id="title"> The Spirit of the Architect
             </div>
             <div style="text-align:center; padding-top: 50px;">
-                <button id="startButton" class="startButton" onclick="startGame();">Play</button>
+                <button id="startButton" class="startButton" onclick="startGame();" disabled>Loading...</button>
             </div>
         </div>
         <audio autoplay loop>
@@ -69,6 +69,10 @@
                         updateScene(dt);
                         renderScene();
                     });
+                    
+                    var startButton = document.getElementById('startButton');
+                    startButton.innerHTML = "start";
+                    startButton.disabled = false;
                 };
                 
                 loader.load();
