@@ -127,7 +127,7 @@ function loadScene(loader) {
     scene.ambientColor = new BABYLON.Color3(1, 1, 1);
     
     var camera;
-    if (Modernizr.touch) {
+    if (Modernizr.touchevents) {
         camera = new BABYLON.TouchCamera("Camera", new BABYLON.Vector3(0, 0, 380), scene);
     } else {
         camera = new BABYLON.FreeCamera("Camera", new BABYLON.Vector3(0, 0, 380), scene);
