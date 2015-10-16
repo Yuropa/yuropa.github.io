@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cloth and Water</title>
+    <link rel="stylesheet" type="text/css" href="../css/site.css">
+</head>
+
+<body>
+    <h1>Josh Ford</h1>
+    <h2>Physically Based Animation</h2>
+    <a href="Cloth.zip">Source Code</a>
+    <p>The controls for the application are as follows:
+        <table>
+            <tr>
+                <td>[1]</td>
+                <td>Show/Restart the Cloth Simulation</td>
+            </tr>
+            <tr>
+                <td>[2]</td>
+                <td>Show/Restart the SPH Simulation</td>
+            </tr>
+            <tr>
+                <td>[3]</td>
+                <td>Show/Restart the Shallow Water Simulation</td>
+            </tr>
+            <tr>
+                <td>[+/-]</td>
+                <td>Allow the camera to be moved in and out of the screen</td>
+            </tr>
+            <tr>
+                <td>[Arrow Keys]</td>
+                <td>Allow the camera to be moved vertical and horizontally</td>
+            </tr>
+            <tr>
+                <td>[r]</td>
+                <td>Resets the camera to the default location</td>
+            </tr>
+            <tr>
+                <td>[space]</td>
+                <td>Pause/resume the simulation</td>
+            </tr>
+            <tr>
+                <td>[`]</td>
+                <td>Prints the instantaneous FPS</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Clicking and dragging the screen will rotate the camera.</td>
+            </tr>
+        </table>
+    </p>
+    <hr>
+    
+    <h3>Cloth Simulation</h3>
+    <p>The demo below highlights several of the key features of my cloth simulator namely: textured cloth and interaction with spherical objects. It is implemented using a Eulerian integrator and runs in realtime. Of all the demos in this assignment, the cloth employs the best rendering. The camera controls can also be seen in this demo.</p>
+    <video src="Videos/Cloth.mov" controls>Your browser does not support the video tag. Download video <a href="Videos/Cloth.mov">here</a>.</video>
+    <hr>
+    
+    <h3>SPH Simulation</h3>
+    <p>The 3D SPH demo is shown in the video below. In order to ensure that it ran in realtime, large particles were used. I would like to implement this simulaiton using the GPU so that the simulation can include more particles and have more photorealistic rendering.</p>
+    <video src="Videos/SPH.mov" controls>Your browser does not support the video tag. Download video <a href="Videos/SPH.mov">here</a>.</video>
+    <hr>
+    
+    <h3>Shallow Water Simulation</h3>
+    <p>Finally, I have implemented a 1D shallow water simulation. It runs in realtime and uses a Midpoint integrator. Again, I would have liked to improved the rendering at some point in the future.</p>
+    <video src="Videos/Shallow%20Water.mov" controls>Your browser does not support the video tag. Download video <a href="Videos/Shallow%20Water.mov">here</a>.</video>
+    
+    <p>After examining the FPS, the simulations do run in realtime. The frame rate remains around 60FPS. It would occasionally dip to something a little lower, but then bounce back to the 60FPS.</p>
+    <hr>
+
+    <h3>Art Contest</h3>
+    <p>I have only one submission for the art contest. The conbination of lighting and wrinkles in the cloth make it appear very realistic.</p> 
+    <img src="Images/Cloth.png"/>
+    <p>While creating the SPH simulation, I forgot to setup interesting initial conditions which resulted in the simulation below. I thought it was funny, so I thought I would share it.</p>
+    <video src="Videos/Poor%20initial%20conditions.mov" controls>Your browser does not support the video tag. Download video <a href="Videos/Poor%20initial%20conditions.mov">here</a>.</video>
+    
+    <hr>
+
+    <p>I used <a href="http://lazyfoo.net/tutorials/SDL/50_SDL_and_opengl_2/index.php">this tutorial</a> in order to setup OpenGL with SDL. Much of the OpenGL boiler plate was adapted from the <a href="https://developer.apple.com/library/prerelease/mac/samplecode/GLEssentials/Introduction/Intro.html#//apple_ref/doc/uid/DTS40010104">Apple's OpenGL sample project</a>. The math library that I developed uses much of the code provided in this sample project.</p>
+
+    <p>Also I found the texture I am using for the wood texture <a href="http://www.fbcabbeville.net/wp-content/uploads/2013/12/textures-wallpapers-free-wood-texture-grunge-wood.jpg">here</a>. The cloth texture was found <a href="http://www.wildtextures.com/free-textures/bluewhite-table-cloth-texture/">here</a>. </p>
+
+    <p>The only two frameworks that I use in this project at SDL and SDL_Image (in order to load the textures). I coded everything else. This includes the scene graph, tessellation of various primitives, as well as wrappers classes for OpenGL.</p>
+</body>
+
+</html>

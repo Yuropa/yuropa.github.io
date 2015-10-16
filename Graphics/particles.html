@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Particle System</title>
+    <link rel="stylesheet" type="text/css" href="../css/site.css">
+</head>
+
+<body>
+    <h1>Josh Ford</h1>
+    <h2>Particle Systems</h2>
+    <a href="Particles.zip">Source Code</a>
+    <p>The controls for the application are as follows:
+        <table>
+            <tr>
+                <td>[1]</td>
+                <td>Show/Restart the Bouncing Ball Simulation</td>
+            </tr>
+            <tr>
+                <td>[2]</td>
+                <td>Show/Restart the Water Spout Simulation</td>
+            </tr>
+            <tr>
+                <td>[3]</td>
+                <td>Show/Restart the Fire/Smoke Simulation</td>
+            </tr>
+            <tr>
+                <td>[4]</td>
+                <td>Show/Restart the magic Spiral Simulation</td>
+            </tr>
+            <tr>
+                <td>[5]</td>
+                <td>Show/Restart the Magic Simulation</td>
+            </tr>
+            <tr>
+                <td>[+/-]</td>
+                <td>Allow the camera to be moved in and out of the screen</td>
+            </tr>
+            <tr>
+                <td>[Arrow Keys]</td>
+                <td>Allow the camera to be moved vertical and horizontally</td>
+            </tr>
+            <tr>
+                <td>[r]</td>
+                <td>Resets the camera to the default location</td>
+            </tr>
+            <tr>
+                <td>[space]</td>
+                <td>Pause/resume the simulation</td>
+            </tr>
+            <tr>
+                <td>[`]</td>
+                <td>Prints the instantaneous FPS</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Clicking and dragging the screen will rotate the camera.</td>
+            </tr>
+        </table>
+    </p>
+    <hr>
+
+    <h3>Bouncing Ball Demo</h3>
+    <p>The bouncing ball demo isn't itself very interesting. But it is worth noting that the ball has Per-Pixel lighting as well as the floor is textured. Both of these features were used in some of the other particle systems.</p>
+    <video src="Videos/Bouncing%20Ball.mov" controls>Your browser does not support the video tag. Download video <a href="Videos/Bouncing%20Ball.mov">here</a>.</video>
+    <hr>
+    
+    <h3>Camera Movement Demo</h3>
+    <video src="Videos/Camera%20Movement.mov" controls>Your browser does not support the video tag. Download video <a href="Videos/Camera%20Movement.mov">here</a>.</video>
+    <hr>
+
+    <h3>Water Spout Demo</h3>
+    <p>The water spout simulation not only has per-pixel light, bouncing particles, but it also has thousands of particles. I used instancing in order to increase the number of particles. Originally, the simulation would max out at around 1000 particles, but now the system is able to handle over 25,000 particles.</p>
+    <video src="Videos/Water%20Spout.mov" controls>Your browser does not support the video tag. Download video <a href="Videos/Water%20Spout.mov">here</a>.</video>
+    <hr>
+
+    <h3>Fire and Smoke Demo</h3>
+    <p>The fire contains translucent and textured particles which subtly change color over time. And with some added variability with the motion of the particles, it produces a pleasing effect. In addition, I added a separate smoke simulation which also contains translucent, textured particles. It works nicely with the fire simulation to create a fairly convincing simulation. </p>
+    <video src="Videos/Fire:Smoke.mov" controls>Your browser does not support the video tag. Download video <a href="Videos/Fire:Smoke.mov">here</a>.</video>
+    <hr>
+
+    <h3>Magic Spiral Demo</h3>
+    <p>Next the "magic spiral", was my first attempt at a magic particle system. The particles change color over time and have some pretty dramatic motion. I find it fun to watch, so I still included it in my demo.</p>
+    <video src="Videos/Magic%20Spiral.mov" controls>Your browser does not support the video tag. Download video <a href="Videos/Magic%20Spiral.mov">here</a>.</video>
+
+    <h3>Magic Demo</h3>
+    <p>Last the magic simulation is similar to the fire simulation. However, the particles radiate from the center instead of flowing upwards. In addition, the color of the particles change over time. It has an almost mesmerizing characteristic to it.</p>
+    <video src="Videos/Magic.mov" controls>Your browser does not support the video tag. Download video <a href="Videos/Magic.mov">here</a>.</video>
+
+    <p>After examining the FPS, the simulations do run in realtime. The frame rate remains around 60FPS. It would occasionally dip to something a little lower, but then bounce back to the 60FPS.</p>
+    <hr>
+
+    <h3>Art Contest</h3>
+    <p>Lastly, for the art contest, I have included several submissions. Most of them are screen shots of the particle systems that I think are interesting. There are also a couple of pictures are a deprecated "magic fire" simulation which I have no longer included in the project.</p> 
+    <img src="Images/Water.png"/>
+    <img src="Images/Fire%20Beginnings.png"/>
+    <img src="Images/Fire.png"/>
+    <img src="Images/Spiral.png"/>
+    <img src="Images/Magic%20Blob.png"/>
+    <img src="Images/Toxic%20Fire.png"/>
+    <img src="Images/Don't%20Breathe%20the%20Smoke!.png"/>
+    
+    <p>Finally, there is a sparkles movie, which was actually a bug that appear early on with the instancing, but it's kinda fun to watch.</p>
+    <video src="Videos/Sparkles.mov" controls>Your browser does not support the video tag. Download video <a href="Videos/Sparkles.mov">here</a>.</video>
+    <hr>
+
+    <p>I used <a href="http://lazyfoo.net/tutorials/SDL/50_SDL_and_opengl_2/index.php">this tutorial</a> in order to setup OpenGL with SDL. Much of the OpenGL boiler plate was adapted from the <a href="https://developer.apple.com/library/prerelease/mac/samplecode/GLEssentials/Introduction/Intro.html#//apple_ref/doc/uid/DTS40010104">Apple's OpenGL sample project</a>. The math library that I developed uses much of the code provided in this sample project.</p>
+
+    <p>Also I found the texture I am using for the wood texture <a href="http://www.fbcabbeville.net/wp-content/uploads/2013/12/textures-wallpapers-free-wood-texture-grunge-wood.jpg">here</a>. </p>
+
+    <p>The only two frameworks that I use in this project at SDL and SDL_Image (in order to load the textures). I coded everything else. This includes the scene graph, tessellation of various primitives, as well as wrappers classes for OpenGL. I may have gone a little over kill with my implementation, since it has over 2700 line of code (the goal being I can reuse some of this in later assignments/projects). </p>
+</body>
+
+</html>
