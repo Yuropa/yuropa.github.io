@@ -56,6 +56,11 @@
     src: url('../resources/fonts/VeraMoBI.ttf');
 }
 
+@font-face {
+    font-family: Menlo;
+    src: url('../resources/fonts/Menlo-Regular.ttf');
+}
+
 .titleFont {
     font-family: Code, Arial, Helvetica, sans-serif;
 }

@@ -104,6 +104,7 @@ hr {
 }
 
 hr:after {
+    font-family: Menlo, monospace;
     content: "⚛";
     display: inline-block;
     position: relative;
