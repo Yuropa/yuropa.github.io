@@ -17,6 +17,15 @@
         },
         {
             "photo" : "images/jelly.photo"
+        }, 
+        {
+            "text" : "And I like to create video games too! Here is one I made for a GameJam."
+        },
+        {
+            "text" : "The Spirit of the Architect",
+            "link" : "spirit/index.html",
+            "color-start" : "#662D8C",
+            "color-end" : "#ED1E79"
         }
     ]
 }
