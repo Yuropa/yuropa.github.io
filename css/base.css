@@ -241,5 +241,26 @@ body, html {
     .content-container .content-item {
         width: calc(100% - 2em);
     }
+    
+    .content-container {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    
+    body, html {
+        font-size: 0.9fem;   
+    }
+    
+    .content-title {
+        padding-left: 0em;
+        padding-right: 0em;
+        
+        font-size: 3em;
+    }
+
+    .content-title-container {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
 }
 
