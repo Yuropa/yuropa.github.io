@@ -215,6 +215,12 @@ body, html {
     font-weight: bold;
 }
 
+@media only screen and (max-width: 1080px) {
+    .content-container .content-item p {
+        margin: 0em;
+    }
+}
+
 
 @media only screen and (max-width: 800px) {
     .content-container {
@@ -224,6 +230,10 @@ body, html {
     
     .content-container .content-item {
         width: calc(500px - 2em);
+    }
+    
+    .content-container .content-item p {
+        margin: 1em;
     }
 }
 
