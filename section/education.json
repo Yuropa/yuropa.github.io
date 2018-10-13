@@ -1,0 +1,34 @@
+{
+    "title": "Education",
+    "color-start" : "#B066FE",
+    "color-end" : "#63E2FF",
+    "items" : [
+        {
+            "text" : "I graduated from the University of Minnesota in 2016 with a degree in Computer Engineering."
+        },
+        {
+            "text" : "University of Minnesota",
+            "link" : "https://cse.umn.edu",
+            "color-start" : "#B066FE",
+            "color-end" : "#63E2FF"
+        },
+        {
+            "photo" : "images/rangitoto.photo"
+        },
+        {
+            "text" : "In 2015, I had an internship at Epic where I was helping to build an iPad app which facilitates dermatologist in their documentation."
+        },
+        {
+            "text" : "Epic",
+            "link" : "https://www.epic.com",
+            "color-start" : "#ba122b",
+            "color-end" : "#ba122b"
+        },
+        {
+            "photo" : "images/glass-beach.photo"
+        },
+        {
+            "text" : "I also was an intern at Seagate working on VLSI design."
+        }
+    ]
+}

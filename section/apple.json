@@ -1,0 +1,31 @@
+{
+    "title": "Apple",
+    "color-start" : "#2E3192",
+    "color-end" : "#1BFFFF",
+    "items" : [
+        {
+            "text" : "I have been an software engineer at Apple since 2016. During that time, I have been developing software for the Apple Watch and learning about on–device personalization."
+        },
+        {
+            "text" : "Siri Watch Face",
+            "link" : "https://www.apple.com/watchos/watchos-5/",
+            "color-start" : "#2E3192",
+            "color-end" : "#1BFFFF"
+        },
+        {
+            "photo" : "images/lyon.photo"
+        },
+        {
+            "text" : "I was lucky enough to be able to present some of our work at WWDC 2018!"
+        },
+        {
+            "text" : "Siri Shortcuts on the Siri Watch Face",
+            "link" : "https://developer.apple.com/videos/play/wwdc2018/217/",
+            "color-start" : "black",
+            "color-end" : "black"
+        },
+        {
+            "photo" : "images/glass.photo"
+        }
+    ]
+}

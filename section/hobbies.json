@@ -1,0 +1,22 @@
+{
+    "title": "Hobbies",
+    "color-start" : "#ED1C24",
+    "color-end" : "#FCEE21",
+    "items" : [
+        {
+            "text" : "Often times in my free time, you will often find me coding something."
+        },
+        {
+            "photo" : "images/cloth.photo"
+        },
+        {
+            "text" : "Cloth Simulation",
+            "link" : "documents/cloth.mov",
+            "color-start" : "#ED1C24",
+            "color-end" : "#FCEE21"
+        },
+        {
+            "photo" : "images/jelly.photo"
+        }
+    ]
+}

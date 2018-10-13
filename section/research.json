@@ -1,0 +1,46 @@
+{
+    "title": "Research",
+    "color-start" : "#00E08A",
+    "color-end" : "#00E0E0",
+    "items" : [
+        {
+            "text" : "While a student at the University of Minnesota, I worked as a research assistant in GroupLens. <br><br>VizByWiki is a project to automatically generate supporting visualizations for news articles. Our paper was published at WWW 2018."
+        },
+        {
+            "text" : "VizByWiki",
+            "link" : "http://www.cond.org/VizByWiki_www18.pdf",
+            "color-start" : "#00E08A",
+            "color-end" : "#00E0E0"
+        },
+        {
+            "photo" : "images/doonside.photo"
+        },
+        {
+            "text" : "I helped build Atlasify–a system that allows you to create a map of anything! By calculating the semantic relatedness, the system is able to generate a map show which places are highly related to the search term. The following example shows which countries are related to World War II."
+        },
+        {
+            "photo" : "images/atlasify.photo"
+        },
+        {
+            "text" : "Atlasify",
+            "link" : "http://www.atlasify.com/",
+            "color-start" : "#245935",
+            "color-end" : "#87C27E"
+        },
+        {
+            "text" : "Atlasify also supports displaying information on a wide array of reference systems such as a periodic table."
+        },
+        {
+            "photo" : "images/chemistry.photo"
+        },
+        {
+            "photo" : "images/shark-fin.photo"
+        },
+        {
+            "text" : "More Atlasify Details",
+            "link" : "https://grouplens.org/blog/atlasify-towards-the-geography-of-everything/",
+            "color-start" : "#00E08A",
+            "color-end" : "#00E0E0"
+        }
+    ]
+}

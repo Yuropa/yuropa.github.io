@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head style="background: rgb(220, 220, 220);">
+    <meta charset="UTF-8">
+    <title>Image</title>
+    <link href="css/base.css" type="text/css" rel="stylesheet"/>
+    <script src="scripts/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="scripts/image-loader.js" type="text/javascript"></script>
+    <script>
+        var directory = location.href.substr(location.href.lastIndexOf('?') + 1);
+        
+        $(document).ready(function() {
+            $('body').append('<div class="image-loader image-fill image-fit" image-src="' + directory + '" image-pos="top" style="height: 100%;"></div>');
+            
+            loadContentForElement($('.image-loader'));
+        });
+    </script>
+</head>
+<body style="background: rgb(220, 220, 220);">
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "items" : [
+        {
+            "text" : "My name is Josh, and I engineer things from time to time."
+        },
+        {
+            "photo" : "images/eiffle.photo"
+        },
+        {
+            "text" : "I also enjoy traveling when I get a chance."
+        },
+        {
+            "photo" : "images/castle.photo"
+        }
+    ]
+}
