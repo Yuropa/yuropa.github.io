@@ -1,8 +1,10 @@
 function loadContentForElement(elm) {
     var loc = $(elm).attr('image-src');
     $.getJSON(loc + '/description.json', function(desc) {
-        var titleElement = '<div class="description noselect">' + desc.name + '</div>';
-        $(elm).append(titleElement);
+        if (desc.name != undefined) { 
+            var titleElement = '<div class="description noselect">' + desc.name + '</div>';
+            $(elm).append(titleElement);
+        }
         $(elm).find('.description').click(function() {
             window.open('image-viewer.html?' + loc, '_self');
         });
