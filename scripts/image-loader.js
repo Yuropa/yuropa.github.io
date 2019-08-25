@@ -89,7 +89,6 @@ function loadSectionContentForElement(elm) {
                 elementContent = '<div class="image-loader fill-image" image-src="' + item.photo + '"image-pos="top" ></div>';
             } else if (item.text != undefined) {
                 elementContent = '<p>' + item.text + '</p>';
-
             }
 
             if (elementContent != undefined) {
@@ -112,6 +111,7 @@ function loadSectionContentForElement(elm) {
 
                 if (item.link != undefined) {
                     itemElement.addClass('content-item-link');
+                    itemElement.addClass('content-item-bounce');
 
 
                     itemElement.click(function(item) {
@@ -119,6 +119,8 @@ function loadSectionContentForElement(elm) {
                             window.open(item.link, '_self');
                         }
                     } (item));
+                } else if (item.photo != undefined) {
+                    itemElement.addClass('content-item-bounce');
                 }
 
                 content.append(itemElement);
