@@ -1,6 +1,9 @@
 {
     "items" : [
         {
+            "photo" : "images/cliff.photo"
+        },
+        {
             "text" : "LinkedIn",
             "link" : "https://www.linkedin.com/in/joshua-ford-0890a396",
             "color-start" : "rgb(0, 115, 176)",

@@ -26,6 +26,9 @@
             "link" : "spirit/index.html",
             "color-start" : "#662D8C",
             "color-end" : "#ED1E79"
+        },
+        {
+            "photo" : "images/fairy.photo"
         }
     ]
 }
