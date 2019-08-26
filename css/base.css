@@ -264,6 +264,14 @@ body, html {
     }
 }
 
+.nav-button {
+    position: sticky;
+    left: 15px;
+    top: 15px;
+    color: gray;
+    font-size: 3em;
+}
+
 .content-container {
     column-count: 2;
     margin: 3em;
