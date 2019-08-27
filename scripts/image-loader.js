@@ -52,9 +52,20 @@ function loadSectionContentForElement(elm) {
     var $elm = $(elm);
     var loc = $elm.attr('content-src');
     $.getJSON(loc, function(desc) {
+        var navId = loc;
+        navId = navId.substr(navId.indexOf('/') + 1);
+        navId = navId.substr(0, navId.lastIndexOf('.'));
+        
+        var navTitle = desc.title;
+        if (navTitle == undefined) {
+            navTitle = navId.charAt(0).toLocaleUpperCase() + navId.slice(1).toLocaleLowerCase();
+        }
+        
+        var addedAnchor = false;
         if (desc.title != undefined) {
-            var titleElement = $('<div class="content-title">' + desc.title + '</div>');
-
+            var titleElement = $('<div class="content-title" id="' + navId + '">' + desc.title + '</div>');
+            addedAnchor = true;
+            
             var startColor = desc['color-start'];
             if (startColor != undefined) {
                 titleElement.css('color', desc.color);
@@ -78,8 +89,15 @@ function loadSectionContentForElement(elm) {
             container.append(titleElement);
             $elm.append(container);
         }
-
-        var content = $('<div class="content-container"></div>');
+        
+        $('.nav-list').append('<div class="nav-list-item" onclick="scrollToSection(\'' + navId + '\')">' + navTitle + '</div>')
+        
+        var content;
+        if (addedAnchor) {
+            content = $('<div class="content-container"></div>');
+        } else {
+            content = $('<div class="content-container" id="' + navId + '"></div>');
+        }
 
         var items = desc.items;
         var arrayLength = items.length;
@@ -136,6 +154,23 @@ function loadSectionContentForElement(elm) {
     });
 }
 
+function toggleNavList() {
+    if ($('.nav-list').hasClass('visible')) {
+        $('.nav-list').removeClass('visible');
+    } else {
+        $('.nav-list').addClass('visible');
+    }
+}
+
+function scrollToSection(sec) {
+    // Close the nav menu if it's open
+    if ($('.nav-list').hasClass('visible')) {
+        $('.nav-list').removeClass('visible');
+    }
+    
+    location.hash = '#' + sec;
+}
+
 $(document).ready(function() {
     $('.image-loader').each(function() {
         loadContentForElement(this);
@@ -148,4 +183,10 @@ $(document).ready(function() {
     setTimeout(function() {
         $('.title-container .subtitle').addClass('filled');
     }, 1500);
+
+    setTimeout(function() {
+        $('.nav-container').addClass('visible');
+    }, 2500);
+    
+    $('.nav-button').on('click', toggleNavList);
 });
