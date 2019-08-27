@@ -150,7 +150,7 @@ function loadSectionContentForElement(elm) {
         $elm.append(content);
         $elm.find('.image-loader').each(function() {
             loadContentForElement(this);
-        })
+        });
     });
 }
 
@@ -168,7 +168,9 @@ function scrollToSection(sec) {
         $('.nav-list').removeClass('visible');
     }
     
-    location.hash = '#' + sec;
+    var scroll = new SmoothScroll();
+    var anchor = document.querySelector('#' + sec);
+    scroll.animateScroll(anchor);
 }
 
 function scrollIndicatorClick() {

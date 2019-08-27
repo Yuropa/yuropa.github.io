@@ -32,11 +32,6 @@ body, html {
     background: rgb(244, 244, 244);
 }
 
-html {
-    -webkit-scroll-behavior: smooth;
-    scroll-behavior: smooth;
-}
-
 /*
 .main-content {
     perspective: 1px;
