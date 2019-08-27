@@ -358,8 +358,10 @@ html {
     border-radius: 14px;
     overflow: hidden;
     
-    margin-bottom: 3em;
+    margin-bottom: 2em;
+    margin-top: 2em;
     padding: 0;
+    
     
     text-align: left;
     line-height: 1.8em;
