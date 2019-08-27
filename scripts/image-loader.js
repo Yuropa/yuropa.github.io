@@ -171,6 +171,10 @@ function scrollToSection(sec) {
     location.hash = '#' + sec;
 }
 
+function scrollIndicatorClick() {
+    $('.nav-list').children().first().trigger('click');
+}
+
 $(document).ready(function() {
     $('.image-loader').each(function() {
         loadContentForElement(this);
