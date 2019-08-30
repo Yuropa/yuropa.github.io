@@ -48,7 +48,7 @@ function loadContentForElement(elm) {
     });
 }
 
-function loadSectionContentForElement(elm) {
+function loadSectionContentForElement(elm, elmIdx) {
     var $elm = $(elm);
     var loc = $elm.attr('content-src');
     $.getJSON(loc, function(desc) {
@@ -90,7 +90,13 @@ function loadSectionContentForElement(elm) {
             $elm.append(container);
         }
         
-        $('.nav-list').append('<div class="nav-list-item" onclick="scrollToSection(\'' + navId + '\')">' + navTitle + '</div>')
+        $('.nav-list').append('<div class="nav-list-item" index="'  + elmIdx + '" onclick="scrollToSection(\'' + navId + '\')">' + navTitle + '</div>');
+        var sortedNavItems = $('.nav-list').children('.nav-list-item').sort(function(a, b) {
+            var vA = a.getAttribute('index');
+            var vB = b.getAttribute('index');
+            return (vA < vB) ? -1 : (vA > vB) ? 1 : 0;
+        });
+        $('.nav-list').append(sortedNavItems);
         
         var content;
         if (addedAnchor) {
@@ -182,8 +188,8 @@ $(document).ready(function() {
         loadContentForElement(this);
     });
 
-    $('.content-loader').each(function() {
-        loadSectionContentForElement(this);
+    $('.content-loader').each(function(index) {
+        loadSectionContentForElement(this, index);
     });
 
     setTimeout(function() {
