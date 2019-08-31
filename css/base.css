@@ -33,6 +33,33 @@ body, html {
 }
 
 /*
+html {
+    background: linear-gradient(221deg, #f9b5b5, #f9e3b5, #f7f9b5, #bef9b5, #b5e0f9, #e7b5f9);
+    background-size: 1200% 1200%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+*/
+
+/*
 .main-content {
     perspective: 1px;
     transform-style: preserve-3d;
