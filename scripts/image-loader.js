@@ -36,7 +36,8 @@ function loadContentForElement(elm) {
                 $(elm).css('background-position', position);
 
 
-                if (this.width < $(elm).width() || this.height < $(elm).height()) {
+                var pixelRatio = window.devicePixelRatio;
+                if (this.width < ($(elm).width() * pixelRatio) || this.height < ($(elm).height() * pixelRatio)) {
                     loadImage(idx - 1);
                 }
             });
