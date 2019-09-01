@@ -204,6 +204,8 @@ function scrollToSection(sec) {
         $('.nav-list').removeClass('visible');
     }
     
+    resizeNavBackground();
+    
     var scroll = new SmoothScroll();
     var anchor = document.querySelector('#' + sec);
     scroll.animateScroll(anchor);
