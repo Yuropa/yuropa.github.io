@@ -7,6 +7,9 @@
             "text" : "I have been an software engineer at Apple since 2016. During that time, I have been developing software for the Apple Watch and learning about on–device personalization."
         },
         {
+            "photo" : "images/oslo.photo"
+        },
+        {
             "text" : "Siri Watch Face",
             "link" : "https://www.apple.com/watchos/watchos-5/",
             "color-start" : "#2E3192",

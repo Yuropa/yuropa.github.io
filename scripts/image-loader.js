@@ -160,12 +160,41 @@ function loadSectionContentForElement(elm, elmIdx) {
     });
 }
 
+function resizeNavBackground() {
+    if ($('.nav-list').hasClass('visible')) {
+        // Visible size to the entire content
+        var width = $('.nav-container').width();
+        var height = $('.nav-container').height();
+        
+        $('.nav-container-background').height(height);
+        $('.nav-container-background').width(width);
+        
+        setTimeout(function() {
+            $('.nav-container-background').addClass('expanded');
+        }, 330);
+    } else {
+        // Visible to just the button size
+        var width = $('.nav-button').width();
+        var height = $('.nav-button').height();
+        
+        $('.nav-container-background').height(height);
+        $('.nav-container-background').width(width);
+        
+        setTimeout(function() {
+            $('.nav-container-background').removeClass('expanded');
+        }, 330);
+    }
+}
+
 function toggleNavList() {
+    var navList = $('.nav-list')
     if ($('.nav-list').hasClass('visible')) {
         $('.nav-list').removeClass('visible');
     } else {
         $('.nav-list').addClass('visible');
     }
+    
+    resizeNavBackground();
 }
 
 function scrollToSection(sec) {
@@ -198,7 +227,9 @@ $(document).ready(function() {
 
     setTimeout(function() {
         $('.nav-container').addClass('visible');
+        $('.nav-container-background').addClass('visible');
     }, 2500);
     
     $('.nav-button').on('click', toggleNavList);
+    resizeNavBackground();
 });
