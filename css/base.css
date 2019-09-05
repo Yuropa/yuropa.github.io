@@ -184,6 +184,7 @@ html {
     font-size: 5em;
     text-shadow: 0px 0px 20px rgb(0, 0, 0);
     display: inline-block;
+    font-weight: bold;
 }
 
 .title-container .subtitle {
@@ -294,13 +295,18 @@ html {
 }
 
 .nav-container-offset {
-}
-
-.nav-container {
     position: fixed;
     left: 15px;
     top: 15px;
     
+    display: block;
+    z-index: 9999;
+}
+
+.nav-container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
     
     padding-left: 0.5em;
     padding-right: 0.5em;
@@ -313,21 +319,26 @@ html {
     opacity: 1.0;
 }
 
+
+.blurred-background {
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(48, 50, 54, 0.6);
+}
+
+.background-shadow {
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.4);
+}
+
 .nav-container-background {
-    position: fixed;
-    left: 15px;
-    top: 15px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
     
     padding-left: 0.5em;
     padding-right: 0.5em;
     
     border-radius: 4px;
-    
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(128, 130, 134, 0.5);
-
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.4);
     
     opacity: 0.0;
     transition: height 0.33s cubic-bezier(0.175, 0.885, 0.32, 1.275), width 0.33s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 2s linear;
@@ -499,3 +510,11 @@ html {
     }
 }
 
+.image-nav-bar {
+    height: 50px;
+    z-index: 9999;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
