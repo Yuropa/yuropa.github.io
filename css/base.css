@@ -5,6 +5,8 @@
 
   --highlight-color1: rgb(7, 190, 184);
   --highlight-color2: rgb(176, 255, 146);
+    
+  --image-nav-height: 0px;
 }
 
 @font-face {
@@ -112,6 +114,7 @@ html {
 .fill-image {
     width: 100%;
 }
+
 
 .content-title {
     display: inline-block;
@@ -511,10 +514,23 @@ html {
 }
 
 .image-nav-bar {
-    height: 50px;
+    height: var(--image-nav-height);
     z-index: 9999;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+
+.image-nav-viewer .image-loader {
+    background: white;
+}
+
+.image-nav-viewer .image-loader .description {
+    bottom: var(--image-nav-height);
+}
+
+.image-nav-viewer .image-loader .description:hover {
+    color: white;
 }
