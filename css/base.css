@@ -5,18 +5,18 @@
 
   --highlight-color1: rgb(7, 190, 184);
   --highlight-color2: rgb(176, 255, 146);
-    
+
   --image-nav-height: 0px;
 }
 
 @font-face {
-    font-family: 'Kiona'; 
+    font-family: 'Kiona';
     src: url('../fonts/Kiona-Regular.ttf');
 }
 
 
 @font-face {
-    font-family: 'ModernSans'; 
+    font-family: 'ModernSans';
     src: url('../fonts/ModernSans-Light.otf');
 }
 
@@ -29,7 +29,7 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    
+
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     background: rgb(244, 244, 244);
 }
@@ -54,7 +54,7 @@ html {
     50%{background-position:100% 50%}
     100%{background-position:0% 51%}
 }
-@keyframes AnimationName { 
+@keyframes AnimationName {
     0%{background-position:0% 51%}
     50%{background-position:100% 50%}
     100%{background-position:0% 51%}
@@ -71,13 +71,13 @@ html {
 }
 
 .main-content > .image-loader {
-    
+
     transform: translateZ(-0.5px) scale(1.5);
     z-index: -1;
 }
 
 .main-content > .image-loader > * {
-    
+
     transform: scale(1.0) translateZ(0.5px);
     z-index: 1;
 }
@@ -91,7 +91,7 @@ html {
     position: relative;
     background: rgb(244, 244, 244);
     z-index: 1;
-    
+
     margin-top: 2em;
     margin-bottom: 2em;
     padding-top: 4em;
@@ -103,11 +103,11 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
     position: relative;
-    
+
     background: rgb(220,220, 220);
-    
+
     overflow: hidden;
 }
 
@@ -150,11 +150,11 @@ html {
 .noselect {
   -webkit-touch-callout: none;
     -webkit-user-select: none;
-     -khtml-user-select: none; 
-       -moz-user-select: none; 
+     -khtml-user-select: none;
+       -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-    
+
     cursor: default;
 }
 
@@ -166,7 +166,7 @@ html {
     padding: 1em;
     text-shadow: 0px 0px 20px rgb(0, 0, 0);
     font-weight: bold;
-    
+
     color: white;
 }
 
@@ -223,14 +223,14 @@ html {
 .title-container .title-scroll-indicator {
     transform: rotate(90deg) scaleX(0.8) scaleY(1.2);
     font-size: 4em;
-    font-family: 'Kiona', sans-serif;   
+    font-family: 'Kiona', sans-serif;
     text-shadow: 0px 0px 10px rgb(0, 0, 0);
-    
+
     cursor: pointer;
-    
-    -webkit-animation: 4s ease-in 0s content-fadein, bounce 1s infinite alternate-reverse; 
-       -moz-animation: 4s ease-in 0s content-fadein, bounce 1s infinite alternate-reverse; 
-        -ms-animation: 4s ease-in 0s content-fadein, bounce 1s infinite alternate-reverse; 
+
+    -webkit-animation: 4s ease-in 0s content-fadein, bounce 1s infinite alternate-reverse;
+       -moz-animation: 4s ease-in 0s content-fadein, bounce 1s infinite alternate-reverse;
+        -ms-animation: 4s ease-in 0s content-fadein, bounce 1s infinite alternate-reverse;
          -o-animation: 4s ease-in 0s content-fadein, bounce 1s infinite alternate-reverse;
             animation: 4s ease-in 0s content-fadein, bounce 1s infinite alternate-reverse;
 
@@ -301,7 +301,7 @@ html {
     position: fixed;
     left: 15px;
     top: 15px;
-    
+
     display: block;
     z-index: 9999;
 }
@@ -310,11 +310,11 @@ html {
     position: absolute;
     left: 0px;
     top: 0px;
-    
+
     padding-left: 0.5em;
     padding-right: 0.5em;
     opacity: 0.0;
-    
+
     transition: opacity 2s;
 }
 
@@ -337,12 +337,12 @@ html {
     position: absolute;
     left: 0px;
     top: 0px;
-    
+
     padding-left: 0.5em;
     padding-right: 0.5em;
-    
+
     border-radius: 4px;
-    
+
     opacity: 0.0;
     transition: height 0.33s cubic-bezier(0.175, 0.885, 0.32, 1.275), width 0.33s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 2s linear;
 }
@@ -370,14 +370,14 @@ html {
     display: none;
     transition: 0.33s;
     margin-top: 1em;
-    
+
     opacity: 0.0;
     transition: opacity 0.2s;
 }
 
 .nav-list.visible {
     display: block;
-    
+
     opacity: 1.0;
 }
 
@@ -385,13 +385,13 @@ html {
     color: rgba(255, 255, 255, 0.5);
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    
+
     margin-left: 0.25em;
     margin-right: 0.25em;
     padding-right: 2em;
-    
+
     border-top: solid thin rgba(255, 255, 255, 0.1);
-    
+
     font-weight: bold;
     font-size: 1.2em;
 }
@@ -417,19 +417,18 @@ html {
     display: inline-block;
     width: calc(100% - 6em);
     max-width: 400px;
-    
+
     background: rgb(231, 232, 235);
     border-radius: 14px;
     overflow: hidden;
-    
+
     margin-bottom: 2em;
     margin-top: 2em;
     padding: 0;
-    
-    
+
+
     text-align: left;
     line-height: 1.8em;
-
 }
 
 .content-item.content-item-link {
@@ -444,10 +443,37 @@ html {
     transform: scale(1.08);
 }
 
+.content-item.content-item-highlight {
+    background: linear-gradient(to right,rgb(120,190,32),rgb(255,199,44),rgb(255,103,31),rgb(200,16,46),rgb(173,26,172),rgb(0,163,224));
+}
+
+.content-item.content-item-highlight p {
+    background: rgb(231, 232, 235);
+    border-radius: 14px;
+    margin: 0px !important;
+
+    padding-bottom: calc(3em - 0px)  !important;
+    padding-left: calc(2em - 0px) !important;
+    padding-top: calc(3em - 0px) !important;
+    padding-right: calc(2em - 0px) !important;
+
+    transition: 0.33s;
+}
+
+.content-item.content-item-highlight p:hover {
+    margin: 2px !important;
+    border-radius: 12px;
+
+    padding-bottom: calc(3em - 2px) !important;
+    padding-left: calc(2em - 2px) !important;
+    padding-top: calc(3em - 2px) !important;
+    padding-right: calc(2em - 2px) !important;
+}
+
 .content-container .content-item p {
     margin: 1em;
     font-size: 1.1em;
-    
+
     padding-bottom: 2em;
     padding-left: 1em;
     padding-top: 2em;
@@ -476,11 +502,11 @@ html {
         column-count: 1;
         margin: 3em;
     }
-    
+
     .content-container .content-item {
         width: calc(500px - 2em);
     }
-    
+
     .content-container .content-item p {
         margin: 1em;
     }
@@ -490,20 +516,20 @@ html {
     .content-container .content-item {
         width: calc(100% - 2em);
     }
-    
+
     .content-container {
         margin-left: 2%;
         margin-right: 2%;
     }
-    
+
     body, html {
-        font-size: 0.9fem;   
+        font-size: 0.9fem;
     }
-    
+
     .content-title {
         padding-left: 0em;
         padding-right: 0em;
-        
+
         font-size: 3.5em;
     }
 

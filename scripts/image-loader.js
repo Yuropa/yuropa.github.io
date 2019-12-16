@@ -1,7 +1,7 @@
 function loadContentForElement(elm) {
     var loc = $(elm).attr('image-src');
     $.getJSON(loc + '/description.json', function(desc) {
-        if (desc.name != undefined) { 
+        if (desc.name != undefined) {
             var titleElement = '<div class="description noselect">' + desc.name + '</div>';
             $(elm).append(titleElement);
         }
@@ -56,17 +56,17 @@ function loadSectionContentForElement(elm, elmIdx) {
         var navId = loc;
         navId = navId.substr(navId.indexOf('/') + 1);
         navId = navId.substr(0, navId.lastIndexOf('.'));
-        
+
         var navTitle = desc.title;
         if (navTitle == undefined) {
             navTitle = navId.charAt(0).toLocaleUpperCase() + navId.slice(1).toLocaleLowerCase();
         }
-        
+
         var addedAnchor = false;
         if (desc.title != undefined) {
             var titleElement = $('<div class="content-title" id="' + navId + '">' + desc.title + '</div>');
             addedAnchor = true;
-            
+
             var startColor = desc['color-start'];
             if (startColor != undefined) {
                 titleElement.css('color', desc.color);
@@ -90,7 +90,7 @@ function loadSectionContentForElement(elm, elmIdx) {
             container.append(titleElement);
             $elm.append(container);
         }
-        
+
         $('.nav-list').append('<div class="nav-list-item" index="'  + elmIdx + '" onclick="scrollToSection(\'' + navId + '\')">' + navTitle + '</div>');
         var sortedNavItems = $('.nav-list').children('.nav-list-item').sort(function(a, b) {
             var vA = a.getAttribute('index');
@@ -98,7 +98,7 @@ function loadSectionContentForElement(elm, elmIdx) {
             return (vA < vB) ? -1 : (vA > vB) ? 1 : 0;
         });
         $('.nav-list').append(sortedNavItems);
-        
+
         var content;
         if (addedAnchor) {
             content = $('<div class="content-container"></div>');
@@ -148,6 +148,8 @@ function loadSectionContentForElement(elm, elmIdx) {
                     } (item));
                 } else if (item.photo != undefined) {
                     itemElement.addClass('content-item-bounce');
+                } else if (item.text != undefined) {
+                    itemElement.addClass('content-item-highlight');
                 }
 
                 content.append(itemElement);
@@ -166,10 +168,10 @@ function resizeNavBackground() {
         // Visible size to the entire content
         var width = $('.nav-container').width();
         var height = $('.nav-container').height();
-        
+
         $('.nav-container-background').height(height);
         $('.nav-container-background').width(width);
-        
+
         setTimeout(function() {
             $('.nav-container-background').addClass('expanded');
         }, 330);
@@ -177,10 +179,10 @@ function resizeNavBackground() {
         // Visible to just the button size
         var width = $('.nav-button').width();
         var height = $('.nav-button').height();
-        
+
         $('.nav-container-background').height(height);
         $('.nav-container-background').width(width);
-        
+
         setTimeout(function() {
             $('.nav-container-background').removeClass('expanded');
         }, 330);
@@ -194,7 +196,7 @@ function toggleNavList() {
     } else {
         $('.nav-list').addClass('visible');
     }
-    
+
     resizeNavBackground();
 }
 
@@ -203,9 +205,9 @@ function scrollToSection(sec) {
     if ($('.nav-list').hasClass('visible')) {
         $('.nav-list').removeClass('visible');
     }
-    
+
     resizeNavBackground();
-    
+
     var scroll = new SmoothScroll();
     var anchor = document.querySelector('#' + sec);
     scroll.animateScroll(anchor);
@@ -232,7 +234,7 @@ $(document).ready(function() {
         $('.nav-container').addClass('visible');
         $('.nav-container-background').addClass('visible');
     }, 2500);
-    
+
     $('.nav-button').on('click', toggleNavList);
     resizeNavBackground();
 });
