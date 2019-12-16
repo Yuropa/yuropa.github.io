@@ -17,7 +17,10 @@
         },
         {
             "photo" : "images/jelly.photo"
-        }, 
+        },
+        {
+            "photo" : "images/duluth.photo"
+        },
         {
             "text" : "And I like to create video games too! Here is one I made for a GameJam."
         },

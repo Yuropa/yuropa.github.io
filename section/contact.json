@@ -14,6 +14,9 @@
             "link" : "documents/resume.pdf",
             "color-start" : "rgb(112, 112, 112)",
             "color-end" : "rgb(164, 164, 164)"
+        },
+        {
+            "photo" : "images/taylosfalls.photo"
         }
     ]
 }

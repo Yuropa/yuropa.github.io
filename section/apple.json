@@ -10,6 +10,12 @@
             "photo" : "images/oslo.photo"
         },
         {
+            "text" : "Most recently I have joined the Machine Intelligence team continue to pursue on-device machine learning."
+        },
+        {
+            "photo" : "images/ap.photo"
+        },
+        {
             "text" : "Siri Watch Face",
             "link" : "https://www.apple.com/watchos/watchos-5/",
             "color-start" : "#2E3192",

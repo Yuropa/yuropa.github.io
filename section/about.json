@@ -10,10 +10,13 @@
             "photo" : "images/rainier.photo"
         },
         {
+            "photo" : "images/castle.photo"
+        },
+        {
             "text" : "I also enjoy traveling when I get a chance."
         },
         {
-            "photo" : "images/castle.photo"
+            "photo" : "images/sandiegozoo.photo"
         }
     ]
 }
