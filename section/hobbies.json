@@ -4,6 +4,9 @@
     "color-end" : "#FCEE21",
     "items" : [
         {
+            "photo" : "images/beach.photo"
+        },
+        {
             "text" : "Often times in my free time, you will often find me coding something."
         },
         {

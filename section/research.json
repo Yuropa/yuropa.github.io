@@ -16,6 +16,9 @@
             "photo" : "images/doonside.photo"
         },
         {
+            "photo" : "images/semuc.photo"
+        },
+        {
             "text" : "I helped build Atlasify–a system that allows you to create a map of anything! By calculating the semantic relatedness, the system is able to generate a map show which places are highly related to the search term. The following example shows which countries are related to World War II."
         },
         {
