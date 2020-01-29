@@ -202,7 +202,7 @@ function toggleNavList() {
 
 function scrollToSection(sec) {
     // Close the nav menu if it's open
-    if ($('.nav-list').hasClass('visible')) {
+    if ($('.nav-list').hasClass('visible') && !$('.nav-list').hasClass('force-visible')) {
         $('.nav-list').removeClass('visible');
     }
 
