@@ -4,22 +4,37 @@
     "color-end" : "#1BFFFF",
     "items" : [
         {
-            "text" : "I have been an software engineer at Apple since 2016. During that time, I have been developing software for the Apple Watch and learning about on–device personalization."
+            "text" : "I have been an software engineer at Apple since 2016. During that time, I have been developing software features for the Apple Watch and learning about on–device personalization and machine learning."
         },
         {
             "photo" : "images/oslo.photo"
         },
         {
-            "text" : "Most recently I have joined the Machine Intelligence team continue to pursue on-device machine learning."
+            "text" : "Most recently I have joined the Machine Intelligence team continue to pursue on-device machine learning. For watchOS 7 we worked to create an experience for interactive Handwashing tracking helping people to stay healthy."
+        },
+        {
+            "text" : "Handwashing",
+            "link" : "https://www.apple.com/watchos/watchos-7/",
+            "color-start" : "#4899F4",
+            "color-end" : "#79BEFA"
+        },
+        {
+            "photo" : "images/handwashing.photo"
         },
         {
             "photo" : "images/ap.photo"
         },
         {
+            "text" : "Previously I worked on the watch faces team and played a cirtical role in creating the Siri Watch Face. By using on-device personalization this watch face is able to suggest the right content at the right time. "
+        },
+        {
             "text" : "Siri Watch Face",
-            "link" : "https://www.apple.com/watchos/watchos-5/",
-            "color-start" : "#2E3192",
-            "color-end" : "#1BFFFF"
+            "link" : "https://support.apple.com/guide/watch/faces-and-features-apde9218b440/watchos",
+            "color-start" : "rgb(143, 75, 146)",
+            "color-end" : "rgb(100, 147, 136)"
+        },
+        {
+            "photo" : "images/siri-face.photo"
         },
         {
             "photo" : "images/lake.photo"
@@ -28,7 +43,7 @@
             "photo" : "images/lyon.photo"
         },
         {
-            "text" : "I was lucky enough to be able to present some of our work at WWDC 2018!"
+            "text" : "I was lucky enough to be able to present some of our work at WWDC 2018 where we had enabled 3rd party integration on the Siri Watch Face!"
         },
         {
             "text" : "Siri Shortcuts on the Siri Watch Face",
