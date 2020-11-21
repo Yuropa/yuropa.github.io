@@ -113,6 +113,11 @@ function loadSectionContentForElement(elm, elmIdx) {
         }
 
         var items = desc.items;
+        
+        if (isTimeline) {
+            items.sort((a, b) => (Date.parse(a.date) < Date.parse(b.date)) ? 1 : -1)
+        }
+        
         var arrayLength = items.length;
         for (var i = 0; i < arrayLength; i++) {
             var item = items[i];
@@ -163,8 +168,16 @@ function loadSectionContentForElement(elm, elmIdx) {
                 
                 if (isTimeline) {
                     var parent = $('<div class="timeline-item"></div></div>');
-                    parent.append($('<div class="timeline-connector">'));
-                    parent.append($('<div class="timeline-indicator">'));
+                    parent.append($('<div class="timeline-connector"></div>'));
+                    parent.append($('<div class="timeline-indicator"></div>'));
+                    
+                    var options = { year: 'numeric', month: 'long' };
+                    var date = new Date( Date.parse(item.date) );
+                    
+                    if (typeof date.getMonth === 'function') {
+                        parent.append($('<dic class="timeline-date">' + date.toLocaleDateString("en-US", options) + '</div>'));
+                    }
+                    
                     parent.append(itemElement);
                     itemElement = parent;
                 }

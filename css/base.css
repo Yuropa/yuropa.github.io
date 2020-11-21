@@ -452,6 +452,14 @@ html {
     border-top: solid 2px rgb(180, 180, 180);
 }
 
+.timeline-date {
+    position: absolute;
+    left: 8px;
+    top: 0px;
+    font-size: 10pt;
+    opacity: 0.5;
+}
+
 .content-container .content-item {
     display: inline-block;
     width: calc(100% - 6em);
