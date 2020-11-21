@@ -31,7 +31,7 @@
             "text" : "Siri Watch Face",
             "link" : "https://support.apple.com/guide/watch/faces-and-features-apde9218b440/watchos",
             "color-start" : "rgb(143, 75, 146)",
-            "color-end" : "rgb(100, 147, 136)"
+            "color-end" : "rgb(109, 147, 136)"
         },
         {
             "photo" : "images/siri-face.photo"

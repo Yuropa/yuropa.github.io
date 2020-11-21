@@ -58,6 +58,7 @@ function loadSectionContentForElement(elm, elmIdx) {
         navId = navId.substr(0, navId.lastIndexOf('.'));
 
         var navTitle = desc.title;
+        var isTimeline = desc.timeline;
         if (navTitle == undefined) {
             navTitle = navId.charAt(0).toLocaleUpperCase() + navId.slice(1).toLocaleLowerCase();
         }
@@ -99,11 +100,16 @@ function loadSectionContentForElement(elm, elmIdx) {
         });
         $('.nav-list').append(sortedNavItems);
 
+        var containerClass = "content-container";
+        if (isTimeline) {
+            containerClass += " timeline";
+        }
+        
         var content;
         if (addedAnchor) {
-            content = $('<div class="content-container"></div>');
+            content = $('<div class="' + containerClass + '"></div>');
         } else {
-            content = $('<div class="content-container" id="' + navId + '"></div>');
+            content = $('<div class="' + containerClass + '" id="' + navId + '"></div>');
         }
 
         var items = desc.items;
@@ -119,7 +125,10 @@ function loadSectionContentForElement(elm, elmIdx) {
             }
 
             if (elementContent != undefined) {
-                var itemElement = $('<div class="content-item"></div>');
+                var itemClass = "content-item";
+                
+                
+                var itemElement = $('<div class="' + itemClass + '"></div>');
                 itemElement.append(elementContent);
 
                 var startColor = item['color-start'];
@@ -150,6 +159,14 @@ function loadSectionContentForElement(elm, elmIdx) {
                     itemElement.addClass('content-item-bounce');
                 } else if (item.text != undefined) {
                     itemElement.addClass('content-item-highlight');
+                }
+                
+                if (isTimeline) {
+                    var parent = $('<div class="timeline-item"></div></div>');
+                    parent.append($('<div class="timeline-connector">'));
+                    parent.append($('<div class="timeline-indicator">'));
+                    parent.append(itemElement);
+                    itemElement = parent;
                 }
 
                 content.append(itemElement);

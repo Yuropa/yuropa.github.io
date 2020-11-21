@@ -1,0 +1,134 @@
+{
+    "title": "Timeline",
+    "color-start" : "#2E3192",
+    "color-end" : "#1BFFFF",
+    "timeline" : true,
+    "items" : [
+        {
+            "text" : "I have been an software engineer at Apple since 2016. During that time, I have been developing software features for the Apple Watch and learning about on–device personalization and machine learning."
+        },
+        {
+            "photo" : "images/oslo.photo"
+        },
+        {
+            "text" : "Most recently I have joined the Machine Intelligence team continue to pursue on-device machine learning. For watchOS 7 we worked to create an experience for interactive Handwashing tracking helping people to stay healthy."
+        },
+        {
+            "text" : "Handwashing",
+            "link" : "https://www.apple.com/watchos/watchos-7/",
+            "color-start" : "#4899F4",
+            "color-end" : "#79BEFA"
+        },
+        {
+            "photo" : "images/handwashing.photo"
+        },
+        {
+            "photo" : "images/ap.photo"
+        },
+        {
+            "text" : "Previously I worked on the watch faces team and played a cirtical role in creating the Siri Watch Face. By using on-device personalization this watch face is able to suggest the right content at the right time. "
+        },
+        {
+            "text" : "Siri Watch Face",
+            "link" : "https://support.apple.com/guide/watch/faces-and-features-apde9218b440/watchos",
+            "color-start" : "rgb(143, 75, 146)",
+            "color-end" : "rgb(109, 147, 136)"
+        },
+        {
+            "photo" : "images/siri-face.photo"
+        },
+        {
+            "photo" : "images/lake.photo"
+        },
+        {
+            "photo" : "images/lyon.photo"
+        },
+        {
+            "text" : "I was lucky enough to be able to present some of our work at WWDC 2018 where we had enabled 3rd party integration on the Siri Watch Face!"
+        },
+        {
+            "text" : "Siri Shortcuts on the Siri Watch Face",
+            "link" : "https://developer.apple.com/videos/play/wwdc2018/217/",
+            "color-start" : "black",
+            "color-end" : "black"
+        },
+        {
+            "photo" : "images/glass.photo"
+        },
+        {
+            "text" : "I graduated from the University of Minnesota in 2016 with a degree in Computer Engineering."
+        },
+        {
+            "text" : "University of Minnesota",
+            "link" : "https://cse.umn.edu",
+            "color-start" : "#B066FE",
+            "color-end" : "#63E2FF"
+        },
+        {
+            "photo" : "images/rangitoto.photo"
+        },
+        {
+            "text" : "In 2015, I had an internship at Epic where I was helping to build an iPad app which assists dermatologist in their documentation."
+        },
+        {
+            "text" : "Epic",
+            "link" : "https://www.epic.com",
+            "color-start" : "#ba122b",
+            "color-end" : "#ba122b"
+        },
+        {
+            "photo" : "images/glass-beach.photo"
+        },
+        {
+            "photo" : "images/sunset.photo"
+        },
+        {
+            "text" : "I also was an intern at Seagate working on VLSI design."
+        },
+        {
+            "photo" : "images/malibu.photo"
+        },
+        {
+            "text" : "While a student at the University of Minnesota, I worked as a research assistant in GroupLens. <br><br>VizByWiki is a project to automatically generate supporting visualizations for news articles. Our paper was published at WWW 2018."
+        },
+        {
+            "text" : "VizByWiki",
+            "link" : "http://www.cond.org/VizByWiki_www18.pdf",
+            "color-start" : "#00E08A",
+            "color-end" : "#00E0E0"
+        },
+        {
+            "photo" : "images/doonside.photo"
+        },
+        {
+            "photo" : "images/semuc.photo"
+        },
+        {
+            "text" : "I helped build Atlasify–a system that allows you to create a map of anything! By calculating the semantic relatedness, the system is able to generate a map show which places are highly related to the search term. The following example shows which countries are related to World War II."
+        },
+        {
+            "photo" : "images/atlasify.photo"
+        },
+        {
+            "text" : "Atlasify",
+            "link" : "http://www.atlasify.com/",
+            "color-start" : "#245935",
+            "color-end" : "#87C27E"
+        },
+        {
+            "text" : "Atlasify also supports displaying information on a wide array of reference systems such as a periodic table."
+        },
+        {
+            "photo" : "images/chemistry.photo"
+        },
+        {
+            "photo" : "images/shark-fin.photo"
+        },
+        {
+            "text" : "More Atlasify Details",
+            "link" : "https://grouplens.org/blog/atlasify-towards-the-geography-of-everything/",
+            "color-start" : "#00E08A",
+            "color-end" : "#00E0E0"
+        }
+    ]
+}
