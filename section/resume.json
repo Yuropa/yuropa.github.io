@@ -1,12 +1,24 @@
 {
+    "title" : "CV & Contact",
+    "color-start" : "#ffffff",
+    "color-end" : "#ffffff",
     "items" : [
         {
+            "icon" : "icons/link.small.svg",
+            "text" : "LinkedIn",
+            "link" : "https://www.linkedin.com/in/joshua-ford-0890a396",
+            "color-start" : "rgb(0, 115, 176)",
+            "color-end" : "rgb(0, 115, 176)"
+        },
+        {
+            "icon" : "icons/doc.plaintext.small.svg",
             "text" : "Résumé",
             "link" : "documents/resume.pdf",
             "color-start" : "rgb(112, 112, 112)",
             "color-end" : "rgb(164, 164, 164)"
         },
         {
+            "icon" : "icons/doc.append.small.svg",
             "text" : "CV",
             "link" : "documents/resume.pdf",
             "color-start" : "rgb(112, 112, 112)",

@@ -1,0 +1,33 @@
+{
+    "title": "Projects",
+    "description" : "A list of the things I have done. With some extra long text. I have been an software engineer at Apple since 2016. During that time, I have been developing software features for the Apple Watch and learning about on–device personalization and machine learning. Most recently I have joined the Machine Intelligence team continue to pursue on-device machine learning. For watchOS 7 we worked to create an experience for interactive Handwashing tracking helping people to stay healthy.",
+    "color-start" : "#ffffff",
+    "color-end" : "#ffffff",
+    "items" : [
+        {
+            "isPanel" : true,
+            "icon" : "icons/apple_logo.jpg",
+            "title" : "Apple",
+            "description" : "Senior AI/ML Software Engineer",
+            "link" : "https://www.apple.com/watchos/watchos-7/"
+        },
+        {
+            "photo" : "images/handwashing.photo"
+        },
+        {
+            "photo" : "images/siri-face.photo"
+        },
+        {
+            "isPanel" : true,      
+            "title" : "Research",
+            "description" : "Undergradute Research Fellow at the University of Minnesota",
+            "link" : "https://grouplens.org"
+        },
+        {
+            "photo" : "images/atlasify.photo"
+        },
+        {
+            "photo" : "images/chemistry.photo"
+        }
+    ]
+}

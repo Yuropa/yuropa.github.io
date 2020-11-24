@@ -49,6 +49,50 @@ function loadContentForElement(elm) {
     });
 }
 
+function parsePanel(elm) {
+    var background = $('<div class="panel-background"></div>');
+    background.append($('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute; left: 0; top: 0%; mix-blend-mode: soft-light;"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="20%" style="stop-color:rgb(180,180,180);stop-opacity:0.8" /><stop offset="80%" style="stop-color:rgb(255,255,255);stop-opacity:0" /></linearGradient></defs><path  fill="url(#grad1)" d="M0,128L26.7,149.3C53.3,171,107,213,160,213.3C213.3,213,267,171,320,154.7C373.3,139,427,149,480,170.7C533.3,192,587,224,640,213.3C693.3,203,747,149,800,112C853.3,75,907,53,960,74.7C1013.3,96,1067,160,1120,197.3C1173.3,235,1227,245,1280,234.7C1333.3,224,1387,192,1413,176L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path></svg>'));
+     background.append($('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute; left: 0; top: 10%; mix-blend-mode: soft-light;"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="20%" style="stop-color:rgb(180,180,180);stop-opacity:0.8" /><stop offset="80%" style="stop-color:rgb(255,255,255);stop-opacity:0" /></linearGradient></defs><path  fill="url(#grad1)"  d="M0,320L26.7,272C53.3,224,107,128,160,90.7C213.3,53,267,75,320,74.7C373.3,75,427,53,480,64C533.3,75,587,117,640,128C693.3,139,747,117,800,144C853.3,171,907,245,960,234.7C1013.3,224,1067,128,1120,96C1173.3,64,1227,96,1280,112C1333.3,128,1387,128,1413,128L1440,128L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path></svg>'));
+    background.append($('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute; left: 0; top: 25%; mix-blend-mode: overlay;"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="20%" style="stop-color:rgb(255,255,255);stop-opacity:0.8" /><stop offset="80%" style="stop-color:rgb(255,255,255);stop-opacity:0" /></linearGradient></defs><path  fill="url(#grad1)"  d="M0,32L26.7,53.3C53.3,75,107,117,160,149.3C213.3,181,267,203,320,202.7C373.3,203,427,181,480,192C533.3,203,587,245,640,256C693.3,267,747,245,800,234.7C853.3,224,907,224,960,202.7C1013.3,181,1067,139,1120,133.3C1173.3,128,1227,160,1280,154.7C1333.3,149,1387,107,1413,85.3L1440,64L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path></svg>'));
+    background.append($('<div class="panel-svg-overlay"></div>'));
+    
+    var result = $('<div class="content-panel"></div>');
+    var container = $('<div class="content-planel-container"></div>');
+    result.append(container);
+    
+    var leftColumn = $('<div class="content-planel-column left"></div>');
+    var rightColumn = $('<div class="content-planel-column right"></div>');
+    container.append(leftColumn);
+    container.append(rightColumn);
+    
+    if (elm.icon) {
+        leftColumn.append($('<image class="content-icon" src="' + elm.icon + '" /><br>'));
+    }
+    if (elm.title) {
+        leftColumn.append($('<p class="content-planel-title">' + elm.title + '</p>'));
+    }
+    if (elm.description) {
+        leftColumn.append($('<p>' + elm.description + '</p>'));
+    }
+    
+    if (elm.icon == undefined) {
+        leftColumn.append($('<div class="content-icon-spacer"></div><br>'));
+    }
+    
+    if (elm.link) {
+        var link = $('<div class="content-planel-link content-item-link content-item-bounce"><image src="icons/link.small.svg" /></div>');
+        link = link.click(function(item) {
+                        return function() {
+                            window.open(item.link, '_self');
+                        }
+                    } (elm));
+        leftColumn.append(link);
+    }
+    
+    background.append(result);
+    return background;
+}
+
 function loadSectionContentForElement(elm, elmIdx) {
     var $elm = $(elm);
     var loc = $elm.attr('content-src');
@@ -63,33 +107,49 @@ function loadSectionContentForElement(elm, elmIdx) {
             navTitle = navId.charAt(0).toLocaleUpperCase() + navId.slice(1).toLocaleLowerCase();
         }
 
-        var addedAnchor = false;
-        if (desc.title != undefined) {
-            var titleElement = $('<div class="content-title" id="' + navId + '">' + desc.title + '</div>');
-            addedAnchor = true;
+        var addedAnchor = false; 
+        {
+            var addedContainerContent = false;
+            var container = $('<div class="content-title-container"></div>');
+            if (desc.title != undefined) {
+                var titleElement = $('<div class="content-title" id="' + navId + '">' + desc.title + '</div>');
+                addedAnchor = true;
+                addedContainerContent = true;
+                container.addClass('content-title-container-with-title');
 
-            var startColor = desc['color-start'];
-            if (startColor != undefined) {
-                titleElement.css('color', desc.color);
+                var startColor = desc['color-start'];
+                if (startColor != undefined) {
+                    titleElement.css('color', desc.color);
 
-                var endColor = desc['color-end'];
-                if (endColor == undefined) {
-                    endColor = startColor;
+                    var endColor = desc['color-end'];
+                    if (endColor == undefined) {
+                        endColor = startColor;
+                    }
+
+                    titleElement.addClass('content-title-background');
+                    titleElement.css({
+                        'background' : 'linear-gradient(70deg, ' + startColor + ',' + endColor + ')',
+                        '-webkit-background-clip' : 'text',
+                        '-webkit-text-fill-color' : 'transparent',
+                        'background-clip' : "text",
+                        'color' : 'transparent'
+                    });
                 }
 
-                titleElement.addClass('content-title-background');
-                titleElement.css({
-                    'background' : 'linear-gradient(70deg, ' + startColor + ',' + endColor + ')',
-                    '-webkit-background-clip' : 'text',
-                    '-webkit-text-fill-color' : 'transparent',
-                    'background-clip' : "text",
-                    'color' : 'transparent'
-                });
+                container.append(titleElement);
             }
-
-            var container = $('<div class="content-title-container"></div>');
-            container.append(titleElement);
-            $elm.append(container);
+            
+            if (desc.description != undefined) {
+                addedContainerContent = true;
+                // Add the description element
+                container.append($(
+                    '<br><br><div class="content-description">' + desc.description + '</div>'
+                ));
+            }
+            
+            if (addedContainerContent) {
+                $elm.append(container);
+            }
         }
 
         $('.nav-list').append('<div class="nav-list-item" index="'  + elmIdx + '" onclick="scrollToSection(\'' + navId + '\')">' + navTitle + '</div>');
@@ -111,6 +171,7 @@ function loadSectionContentForElement(elm, elmIdx) {
         } else {
             content = $('<div class="' + containerClass + '" id="' + navId + '"></div>');
         }
+        $elm.append(content);
 
         var items = desc.items;
         
@@ -121,6 +182,19 @@ function loadSectionContentForElement(elm, elmIdx) {
         var arrayLength = items.length;
         for (var i = 0; i < arrayLength; i++) {
             var item = items[i];
+            
+            if (item.isPanel) {
+                content = $('<div class="content-title-container"></div>');
+                content.append(parsePanel(item));
+                $elm.append(content);
+                
+                if (i < arrayLength) {
+                    content = $('<div class="' + containerClass + '"></div>');
+                    $elm.append(content);
+                }
+                
+                continue;
+            }
 
             var elementContent;
             if (item.photo != undefined) {
@@ -128,10 +202,19 @@ function loadSectionContentForElement(elm, elmIdx) {
             } else if (item.text != undefined) {
                 elementContent = '<p>' + item.text + '</p>';
             }
+            
+            if (item.icon) {
+                var iconContent = '<image class="content-icon" src="' + item.icon + '" />'; 
+                
+                if (elementContent != undefined) {
+                    elementContent = iconContent + elementContent;
+                } else {
+                    elementContent = iconContent;
+                }
+            }
 
             if (elementContent != undefined) {
                 var itemClass = "content-item";
-                
                 
                 var itemElement = $('<div class="' + itemClass + '"></div>');
                 itemElement.append(elementContent);
@@ -175,10 +258,30 @@ function loadSectionContentForElement(elm, elmIdx) {
                     var date = new Date( Date.parse(item.date) );
                     
                     if (typeof date.getMonth === 'function') {
-                        parent.append($('<dic class="timeline-date">' + date.toLocaleDateString("en-US", options) + '</div>'));
+                        parent.append($('<div class="timeline-date">' + date.toLocaleDateString("en-US", options) + '</div>'));
                     }
                     
-                    parent.append(itemElement);
+                    var localContent = $('<div class="timeline-item-container"></div>');
+                    if (item.title) {
+                        localContent.append($('<p class="content-planel-title">' + item.title + '</p>'));
+                    }
+                    
+                    localContent.append(elementContent);
+                    
+                    if (item.linkSrc) {
+                        var link = $('<div class="content-planel-link content-item-link content-item-bounce"><image src="icons/link.small.svg" /></div>');
+                        link = link.click(function(item) {
+                                        return function() {
+                                            window.open(item.linkSrc, '_self');
+                                        }
+                                    } (elm));
+                        localContent.append(link);
+                    }
+                    
+                    var localParentContainer = $('<div class="' + itemClass + '"></div>');
+                    localParentContainer.append(localContent);
+                    
+                    parent.append(localParentContainer);
                     itemElement = parent;
                 }
 
@@ -186,7 +289,6 @@ function loadSectionContentForElement(elm, elmIdx) {
             }
         }
 
-        $elm.append(content);
         $elm.find('.image-loader').each(function() {
             loadContentForElement(this);
         });

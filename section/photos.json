@@ -1,0 +1,35 @@
+{
+    "title": "Photos",
+    "description" : "Collection of obligatory travel photos I've taken over the years.",
+    "color-start" : "#ffffff",
+    "color-end" : "#ffffff",
+    "items" : [
+        {
+            "photo" : "images/rainier.photo"
+        },
+        {
+            "photo" : "images/poznan.photo"
+        },
+        {
+            "photo" : "images/lake.photo"
+        },
+        {
+            "photo" : "images/eiffle.photo"
+        },
+        {
+            "photo" : "images/bavaria.photo"
+        },
+        {
+            "photo" : "images/ap.photo"
+        },
+        {
+            "photo" : "images/glass.photo"
+        },
+        {
+            "photo" : "images/queenstown.photo"
+        },
+        {
+            "photo" : "images/oslo.photo"
+        }
+    ]
+}

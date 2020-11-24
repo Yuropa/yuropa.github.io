@@ -1,14 +1,9 @@
 {
     "title": "Hobbies",
-    "color-start" : "#ED1C24",
-    "color-end" : "#FCEE21",
+    "description" : "A list of the things I have done. With some extra long text. I have been an software engineer at Apple since 2016. During that time, I have been developing software features for the Apple Watch and learning about on–device personalization and machine learning. Most recently I have joined the Machine Intelligence team continue to pursue on-device machine learning. For watchOS 7 we worked to create an experience for interactive Handwashing tracking helping people to stay healthy.",
+    "color-start" : "#ffffff",
+    "color-end" : "#ffffff",
     "items" : [
-        {
-            "photo" : "images/beach.photo"
-        },
-        {
-            "text" : "Often times in my free time, you will often find me coding something."
-        },
         {
             "photo" : "images/cloth.photo"
         },
@@ -19,12 +14,6 @@
             "color-end" : "#FCEE21"
         },
         {
-            "photo" : "images/jelly.photo"
-        },
-        {
-            "photo" : "images/duluth.photo"
-        },
-        {
             "text" : "And I like to create video games too! Here is one I made for a GameJam."
         },
         {
@@ -32,9 +21,6 @@
             "link" : "spirit/index.html",
             "color-start" : "#662D8C",
             "color-end" : "#ED1E79"
-        },
-        {
-            "photo" : "images/fairy.photo"
         }
     ]
 }

@@ -1,13 +1,10 @@
 {
     "title": "Apple",
-    "color-start" : "#2E3192",
-    "color-end" : "#1BFFFF",
+    "color-start" : "#ffffff",
+    "color-end" : "#ffffff",
     "items" : [
         {
             "text" : "I have been an software engineer at Apple since 2016. During that time, I have been developing software features for the Apple Watch and learning about on–device personalization and machine learning."
-        },
-        {
-            "photo" : "images/oslo.photo"
         },
         {
             "text" : "Most recently I have joined the Machine Intelligence team continue to pursue on-device machine learning. For watchOS 7 we worked to create an experience for interactive Handwashing tracking helping people to stay healthy."
@@ -22,9 +19,6 @@
             "photo" : "images/handwashing.photo"
         },
         {
-            "photo" : "images/ap.photo"
-        },
-        {
             "text" : "Previously I worked on the watch faces team and played a cirtical role in creating the Siri Watch Face. By using on-device personalization this watch face is able to suggest the right content at the right time. "
         },
         {
@@ -37,12 +31,6 @@
             "photo" : "images/siri-face.photo"
         },
         {
-            "photo" : "images/lake.photo"
-        },
-        {
-            "photo" : "images/lyon.photo"
-        },
-        {
             "text" : "I was lucky enough to be able to present some of our work at WWDC 2018 where we had enabled 3rd party integration on the Siri Watch Face!"
         },
         {
@@ -50,9 +38,6 @@
             "link" : "https://developer.apple.com/videos/play/wwdc2018/217/",
             "color-start" : "black",
             "color-end" : "black"
-        },
-        {
-            "photo" : "images/glass.photo"
         }
     ]
 }
