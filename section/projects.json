@@ -1,6 +1,6 @@
 {
     "title": "Projects",
-    "description" : "A list of the things I have done. With some extra long text. I have been an software engineer at Apple since 2016. During that time, I have been developing software features for the Apple Watch and learning about on–device personalization and machine learning. Most recently I have joined the Machine Intelligence team continue to pursue on-device machine learning. For watchOS 7 we worked to create an experience for interactive Handwashing tracking helping people to stay healthy.",
+    "description" : "Throughout my time at Apple and during my undergrad, I was lucky enough to have worked on a number of projects that have had quite an impact. At Apple my work focused around using machine learning as a tool to create unique and powerful user experiences. My undergraduate work revolved around building novel HCI-driven visualizations.",
     "color-start" : "#ffffff",
     "color-end" : "#ffffff",
     "items" : [
@@ -9,7 +9,18 @@
             "icon" : "icons/apple_logo.jpg",
             "title" : "Apple",
             "description" : "Senior AI/ML Software Engineer",
-            "link" : "https://www.apple.com/watchos/watchos-7/"
+            "link" : "https://www.apple.com/watchos/watchos-7/",
+            "content": [
+                {
+                    "text" : "The Handwashing feature in watchOS 7 automatically detects when users are washing their hands and provides an interactive experience to encourage washing for the recommended 20 seconds."
+                },
+                {
+                    "text" : "In watchOS 5, we enabled third party Siri Shortcuts to appear on the Siri Watch Face which required not only to provide an external facing API but also to develop algorithms to properly rank the content from third party apps based on users’ interests."
+                },
+                {
+                    "text" : "The Siri Watch Face was a novel, interactive watch face released as a part of watchOS 4. By making use on online machine learning and personalization techniques, we were able to provide an experience that was tailored to each users’ individual preferences. "
+                }
+            ]
         },
         {
             "photo" : "images/handwashing.photo"
@@ -21,7 +32,18 @@
             "isPanel" : true,      
             "title" : "Research",
             "description" : "Undergradute Research Fellow at the University of Minnesota",
-            "link" : "https://grouplens.org"
+            "link" : "https://grouplens.org",
+            "content": [
+                {
+                    "text" : "I worked on something here"
+                },
+                {
+                    "text" : "Somethign there"
+                },
+                {
+                    "text" : "And a few more things"
+                }
+            ]
         },
         {
             "photo" : "images/atlasify.photo"

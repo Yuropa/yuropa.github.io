@@ -65,6 +65,9 @@ function parsePanel(elm) {
     container.append(leftColumn);
     container.append(rightColumn);
     
+    var rightColumnContainer = $('<div class="content-panel-right-container"></div>');
+    rightColumn.append(rightColumnContainer);
+    
     if (elm.icon) {
         leftColumn.append($('<image class="content-icon" src="' + elm.icon + '" /><br>'));
     }
@@ -87,6 +90,19 @@ function parsePanel(elm) {
                         }
                     } (elm));
         leftColumn.append(link);
+    }
+    
+    if (elm.content) {
+        for (var i = 0; i < elm.content.length; i++) {
+            var detailItem = elm.content[i];
+            var detailItemContainer = $('<div class="content-panel-column-detail-item"></div>');
+            
+            if (detailItem.text) {
+                detailItemContainer.append($('<p>' + detailItem.text + '</p>'));
+            }
+            
+            rightColumnContainer.append(detailItemContainer);
+        }
     }
     
     background.append(result);
