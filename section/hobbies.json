@@ -1,17 +1,17 @@
 {
     "title": "Hobbies",
-    "description" : "A list of the things I have done. With some extra long text. I have been an software engineer at Apple since 2016. During that time, I have been developing software features for the Apple Watch and learning about on–device personalization and machine learning. Most recently I have joined the Machine Intelligence team continue to pursue on-device machine learning. For watchOS 7 we worked to create an experience for interactive Handwashing tracking helping people to stay healthy.",
+    "description" : "In my free time, I also find myself often times working on a number of other projects. Here is a small sampling of them.",
     "color-start" : "#ffffff",
     "color-end" : "#ffffff",
     "items" : [
         {
-            "photo" : "images/cloth.photo"
-        },
-        {
-            "text" : "Cloth Simulation",
+            "text" : "Cloth Simulation Video",
             "link" : "documents/cloth.mov",
             "color-start" : "#ED1C24",
             "color-end" : "#FCEE21"
+        },
+        {
+            "photo" : "images/cloth.photo"
         },
         {
             "text" : "And I like to create video games too! Here is one I made for a GameJam."

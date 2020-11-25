@@ -105,6 +105,8 @@ function parsePanel(elm) {
         }
     }
     
+    rightColumnContainer.append($('<div class="content-panel-right-container-spacer"></div>'));
+    
     background.append(result);
     return background;
 }

@@ -35,13 +35,10 @@
             "link" : "https://grouplens.org",
             "content": [
                 {
-                    "text" : "I worked on something here"
+                    "text" : "One of the first projects I worked on was Atlasifty. This tool enables users to chart a heat map of semantic relatedness across a variety of maps (such as a world map or periodic table)."
                 },
                 {
-                    "text" : "Somethign there"
-                },
-                {
-                    "text" : "And a few more things"
+                    "text" : "VizByWiki was the second major project I worked on during my undergrad. By making use of visualizations available on Wikipedia, we were able to effectively provide supplemental visualizations for news articles. "
                 }
             ]
         },
