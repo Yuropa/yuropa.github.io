@@ -5,10 +5,16 @@
     "color-end" : "#ffffff",
     "timeline" : true,
     "items" : [
+	{
+            "title" : "AssistiveTouch for Apple Watch",
+            "text" : "I have been a software engineer at Apple since 2016. During that time, I have been developing software features for the Apple Watch and learning about on–device personalization and machine learning. I have joined the Machine Intelligence team continue to pursue on-device machine learning. For watchOS 8 we worked to create an experience for one-handed gestures to control the entirety of watchOS. This allows users with upper body limb differences to enjoy and make use of all the great features of Apple Watch without ever needing to touch the screen!",
+            "date" : "2021-06-01T00:00:00",
+            "linkSrc" : "https://www.apple.com/newsroom/2021/05/apple-previews-powerful-software-updates-designed-for-people-with-disabilities/"
+        },
         {
             "title" : "Handwashing",
-            "text" : "I have been an software engineer at Apple since 2016. During that time, I have been developing software features for the Apple Watch and learning about on–device personalization and machine learning. Most recently I have joined the Machine Intelligence team continue to pursue on-device machine learning. For watchOS 7 we worked to create an experience for interactive Handwashing tracking helping people to stay healthy.",
-            "date" : "2019-06-01T00:00:00",
+            "text" : "Before working on the accessibility feature, I contributed on other feature based features for Apple Watch. In watchOS 7 we worked to create an experience for interactive Handwashing tracking helping people to stay healthy.",
+            "date" : "2020-06-01T00:00:00",
             "linkSrc" : "https://www.apple.com/watchos/watchos-7/"
         },
         {

@@ -12,6 +12,9 @@
             "link" : "https://www.apple.com/watchos/watchos-7/",
             "content": [
                 {
+                    "text" : "AssistiveTouch for Apple Watch is a brand new accessibility feature in watchOS 8. Using the sensors on Apple Watch, one-handed gestures can be detected and used to navigate the entire OS."
+                },
+                {
                     "text" : "The Handwashing feature in watchOS 7 automatically detects when users are washing their hands and provides an interactive experience to encourage washing for the recommended 20 seconds."
                 },
                 {
@@ -21,6 +24,9 @@
                     "text" : "The Siri Watch Face was a novel, interactive watch face released as a part of watchOS 4. By making use on online machine learning and personalization techniques, we were able to provide an experience that was tailored to each users’ individual preferences. "
                 }
             ]
+        },
+        {
+            "photo" : "images/assistive-touch.photo"
         },
         {
             "photo" : "images/handwashing.photo"
