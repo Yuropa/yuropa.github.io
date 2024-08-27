@@ -962,6 +962,7 @@ html {
 .calendar-wrapper {
     max-width: 450px;
     margin: 0;
+    color: black;
 }
 
 .calendar-wrapper header {
@@ -1103,7 +1104,7 @@ header .calendar-icons span {
     border-bottom: solid thin rgba(144, 144, 144, 0.2);
     
     padding: 10px;
-    margin: 10px;
+    margin: 10px; 
 }
 
 .calendar-list-item-time {
