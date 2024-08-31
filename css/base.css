@@ -1108,6 +1108,7 @@ header .calendar-icons span {
 }
 
 .calendar-list-item-time {
+    color: black;
     font-size: 0.8em;
     padding-left: 10px;
     padding-right: 10px;
@@ -1115,6 +1116,7 @@ header .calendar-icons span {
 }
 
 .calendar-list-item-title {
+    color: black;
     font-size: 1.2em;
     padding: 10px;
     border-left: solid thick #9B59B6;
